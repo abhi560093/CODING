@@ -1,0 +1,95 @@
+/* Global Variables */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #222;
+    --text-color: #fff;
+    --hover-color: #66BB6A;
+    --transition-speed: 0.3s;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: auto;
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1400px;
+    max-height: 90vh;
+    flex-direction: column;
+}
+
+.card {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform var(--transition-speed) ease-in-out;
+    min-width: 250px;
+    min-height: 150px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: var(--hover-color);
+}
+
+/* Button Styling */
+.button {
+    background: var(--text-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+}
+
+.button:hover {
+    background: var(--hover-color);
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
